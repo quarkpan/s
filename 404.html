@@ -1,1 +1,22 @@
-
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>跳转中</title>
+  <script>
+    (function () {
+      var path = location.pathname.replace(/\/+$/, "");
+      var parts = path.split("/");
+      var id = parts[parts.length - 1] || "";
+      if (id && id !== "s") {
+        location.replace("https://pan.quark.cn/s/" + encodeURIComponent(id) + location.search);
+      } else {
+        document.body.innerText = "缺少分享 ID";
+      }
+    })();
+  </script>
+</head>
+<body>
+  正在跳转到夸克网盘…
+</body>
+</html>
